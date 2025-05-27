@@ -10,15 +10,14 @@
     </style>
 </head>
 <body>
-    <!-- Add A-Frame scene here -->
+    <!-- Add A-Frame scene with your 3D model -->
     <a-scene>
-        <!-- Your new text element -->
-        <a-text 
-            value="Welcome to My VR House!" 
-            position="0 4 -5" 
-            color="black" 
-            align="center">
-        </a-text>
+        <a-entity 
+            gltf-model="models/guard.glb"
+            position="0 0 -5"
+            scale="1 1 1"
+            rotation="0 0 0">
+        </a-entity>
     </a-scene>
 
     <script src="./libs/fas.js"></script>
