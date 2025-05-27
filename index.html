@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VR Architectural Walkthrough with WebXR</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!-- ... (keep all favicon links) -->
-    <link type="text/css" rel="stylesheet" href="./css/common.css">
-    <style>
-        body { margin: 0; padding: 0; }
-    </style>
+    <!-- ... (head content unchanged) ... -->
 </head>
 <body>
-    <!-- Add A-Frame scene with your 3D model -->
-    <a-scene>
+    <!-- Scene with lighting and stats -->
+    <a-scene stats="true" loading-screen="dotsColor: red; backgroundColor: white">
+        <!-- Lighting -->
+        <a-light type="ambient" color="#FFF"></a-light>
+        <a-light type="directional" position="0 2 1" intensity="0.8"></a-light>
+        
+        <!-- Your model -->
         <a-entity 
-            gltf-model="models/guard.glb"
-            position="0 0 -5"
-            scale="1 1 1"
-            rotation="0 0 0">
-        </a-entity>
+            gltf-model="models/your-model.glb"
+            position="0 0 -3"
+            scale="0.1 0.1 0.1"
+        ></a-entity>
     </a-scene>
 
-    <script src="./libs/fas.js"></script>
+    <!-- Load A-Frame library -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <!-- <script src="./libs/fas.js"></script> (remove if redundant) -->
+    
     <script type="module">
         import { App } from './app.js';
         document.addEventListener("DOMContentLoaded", function(){
